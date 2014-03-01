@@ -1,4 +1,4 @@
-Traveling-Salesman-Viz
+Travelling-Salesman-Viz
 ======================
 
-Visualization of Traveling Salesman in D3, using 2-opt switches for finding a local minimum.
+Visualization of Travelling Salesman in D3, using 2-opt switches for finding a local minimum.
