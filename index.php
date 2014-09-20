@@ -68,6 +68,11 @@ body {
 	margin-right:25px;
 }
 
+#display {
+    width:100%;
+    height:100%;
+}
+
 line {
 	stroke-width:1px;
 	stroke:silver;
