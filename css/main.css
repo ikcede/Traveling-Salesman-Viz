@@ -1,0 +1,71 @@
+
+body {
+  text-align:center;
+}
+
+#content {
+  position:fixed;
+  left:5%;
+  top:0px;
+  width:90%;
+  height:100%;
+  
+  margin: auto;
+  padding-top:25px;
+  overflow-y:auto;
+  
+  background:white;
+  text-align:left;
+  
+  border-left:1px solid lightgrey;
+  border-right:1px solid lightgrey;
+}
+
+.pane {
+  border: 1px solid lightgrey;
+  border-radius:10px;
+  height:95%;
+  overflow-y:auto;
+  overflow-x:hidden;
+  padding:10px;
+}
+
+#left-pane {
+  float:left;
+  width:25%;
+  margin-left:25px;
+}
+
+#left-pane textarea {
+  min-height:100px;
+}
+
+#n-points {
+  max-width:125px;
+}
+
+#right-pane {
+  float:right;
+  width:70%;
+  margin-right:25px;
+
+  display: flex;
+}
+
+#display {
+  display: flex;
+  flex: 1;
+}
+
+line {
+  stroke-width:1px;
+  stroke:silver;
+}
+
+text {
+  font-family: Inconsolata, monospace;
+}
+
+.red {
+  color:red;
+}
