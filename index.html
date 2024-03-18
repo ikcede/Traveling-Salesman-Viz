@@ -1,10 +1,12 @@
 <!doctype html>
 <html>
 <head>
-
 	<title>Traveling Salesman</title>
 
-	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+				rel="stylesheet"
+				integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+				crossorigin="anonymous">
 	<link rel="stylesheet" href="css/main.css">
 
 	<script src="https://code.jquery.com/jquery-3.7.1.min.js"
@@ -18,37 +20,78 @@
 
   <script type="text/javascript" src="scripts/traveling-salesman.js"></script>
 	<script type="text/javascript" src="scripts/data.js"></script>
+	<script type="text/javascript" src="scripts/visualization.js"></script>
 	<script type="text/javascript" src="scripts/main.js"></script>
-	
-	
-	<!-- <script type="text/javascript" src="scripts/functions.js"></script> -->
-	<!-- <script type="text/javascript" src="scripts/js.js"></script> -->
-
 </head>
 
 <body>
 
-	<div id="content">
-		
-		<div id="left-pane" class="pane">
+	<div class="content">
+		<div class="pane">
+			<svg id="display"></svg>
+		</div>
+
+		<div class="pane sidebar">
+			<h1>Traveling Salesman</h1>
+
+			<h2>Input</h2>
+
+			<div class="input-group">
+				<input type="file" 
+							 class="form-control"
+							 id="input-file"
+							 name="files[]"
+							 aria-label="File input field">
+			</div>
 			
-			<!-- Input control -->
-			<input type="file" id="input-file" name="files[]" />&nbsp;&nbsp;
-			<br>
-			<strong>Input:</strong>
-			<textarea id='text-input' class='form-control'>0.0  1.0  2.0  0.0  2.0  1.0
-0.0  2.0  0.0  1.0  1.0  0.0</textarea>
-			<br>
-			N-points: <input type='text' id='n-points'></input>&nbsp;
-			<button id='generate-points' class="btn btn-default">Use</button>
-			<br><br>
-			<button id="apply-input" class="btn btn-default">Load!</button>
+			<div class="input-group">
+				<input type="text" 
+							 class="form-control"
+							 placeholder="N random points"
+							 aria-label="N-points input"
+							 id="n-points">
+				<button class="btn btn-outline-primary"
+								type="button"
+								id="generate-points">Generate</button>
+			</div>
+
+			<h2>Points</h2>
+
+			<p>X values in line 1, Y values in line 2</p>
+
+			<div class="input-group">
+				<textarea id='text-input' 
+									class='form-control'></textarea>
+			</div>
 			
-			<hr>
+			<div class="input-group">
+				<button id="apply-input" 
+								class="btn btn-outline-primary">
+					Load Points
+				</button>
+			</div>
+			
 			<!-- Interactions and settings -->
-			<button id="step-button" class="btn btn-default">Step forward</button>
-			<button id="run-button" class="btn btn-default">Run to completion</button>
-			<br><span class="red" id="salesman-end"></span><br><br>
+			<div class="controls input-group">
+				<div class="btn-group" 
+						 role="group"
+						 aria-label="Visualization Controls">
+						 <button id="step-button" 
+						 				 class="btn btn-outline-primary">
+							Step forward
+						 </button>
+						 <button id="run-button" 
+						 				 class="btn btn-outline-primary">
+							Run to completion
+						</button>
+				</div>
+			</div>
+	
+			<div class="notifications" aria-live="polite">
+				<span class="red" id="salesman-end"></span>
+			</div>
+			
+			<!--
 			Algorithm:
 			<select id="algorithm" class="form-control">
 				<option value='simple'>Simple (2-opt swap)</option>
@@ -57,13 +100,7 @@
 			<br>
 			Delay: <input id="delay" type="text" value="250"></input>
 			
-			<br><br>
-		
-		</div>
-		
-		<div id="right-pane" class="pane">
-		
-			<svg id="display"></svg>
+			<br><br>-->
 		
 		</div>
 	</div>
